@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     type="image/png"
     href=""
   >
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   <title>Keebs Collector</title>
   {% block head %}
   {% endblock %}
