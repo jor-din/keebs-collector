@@ -1,0 +1,14 @@
+<section class="card-container">
+    {% for keyboard in keyboards %}
+      <div class="card">
+        <a href="{% url 'keyboards_detail' keyboard.id %}">
+          <div class="card-content">
+            <h2 class="card-title">{{ keyboard.name }}</h2>
+            <p><small>{{ keyboard.layout }}</small></p>
+            <p><small>{{ keyboard.pcb }}</small></p>
+            <p><small>{{ keyboard.plate }}</small></p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </section>

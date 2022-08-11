@@ -1,0 +1,9 @@
+<p>{{ keyboard.name }}</p>
+{% comment %} New markup {% endcomment %}
+<div class="cat-actions">
+  <a href="{% url 'keyboards_update' keyboard.id %}" class="btn warn">Edit</a>
+  <a href="{% url 'keyboards_delete' keyboard.id %}" class="btn danger">Delete</a>
+</div>
+{% comment %} New markup above {% endcomment %}
+</div>
+</section>

@@ -48,7 +48,7 @@ class Keyboard(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse("keyboards_details", kwargs={"keyboard_id": self.id})
+        return reverse('keyboards_detail', kwargs={'keyboard_id': self.id})
     
        
         
