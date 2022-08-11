@@ -1,1 +1,1 @@
-web: gunicorn keepkeebs.wsgi
+web: gunicorn keebscollector.wsgi

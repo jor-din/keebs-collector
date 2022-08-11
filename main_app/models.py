@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+
 TYPES= (
     ('Linear', 'Linear'),
     ('Tactile', 'Tactile'),
@@ -91,6 +92,7 @@ class Switch(models.Model):
         default=[0][0]
     )
     
+    
     def __str__(self):
         return self.name
     
@@ -122,7 +124,6 @@ PLATES = (
     ('Steel','Steel')
 )
 
-# Create your models here.
 class Keyboard(models.Model):
     name = models.CharField(max_length=100)
     layout = models.CharField(
@@ -148,4 +149,3 @@ class Keyboard(models.Model):
     
     def get_absolute_url(self):
         return reverse('keyboards_detail', kwargs={'keyboard_id': self.id})
-    
