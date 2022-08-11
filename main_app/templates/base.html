@@ -17,17 +17,12 @@
 </head>
 <body>
   <header>
-    {% comment %} <div class="header-logo-container">
-      <a href="/">
-        <img 
-          src="{% static 'images/header-logo.svg' %}"
-          alt="The Cat Collector Logo"
-        >
-      </a>
-    </div> {% endcomment %}
     <nav>
       <ul>
-        <li><a href="/about">About</a></li>
+        <li><a href="{% url 'keyboards_index' %}">All Keyboards</a></li>
+        <li><a href="{% url 'keyboards_create' %}">Add A Keyboard</a></li>
+        <li><a href="{% url 'switches_create' %}">Add A Switch</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
       </ul>
     </nav>
   </header>

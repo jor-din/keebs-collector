@@ -1,57 +1,7 @@
-from secrets import choice
-from typing import Type
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
-LAYOUTS = (
-    ('60%', '60%'),
-    ('65%', '65%'),
-    ('75%', '75%'),
-    ('80%', '80%'),
-    ('95%', '95%'),
-    ('100%', '100%')
-)
-
-PCB_BOARDS = (
-    ('Hotswap','Hotswap'),
-    ('Solderable','Solderable')
-)
-
-PLATES = (
-    ('Aluminum','Aluminum'),
-    ('Brass','Brass'),
-    ('Carbon Fiber', 'Carbon Fiber'),
-    ('FR-4','FR-4'),
-    ('Polycarbonate','Polycarbonate'),
-    ('POM', 'POM'),
-    ('Steel','Steel')
-)
-
-# Create your models here.
-class Keyboard(models.Model):
-    name = models.CharField(max_length=100)
-    layout = models.CharField(
-        max_length=50,
-        choices=LAYOUTS,
-        default=[0][0]
-    )
-    pcb = models.CharField(
-        max_length=50,
-        choices=PCB_BOARDS,
-        default=[0][0]
-    )
-    plate = models.CharField(
-        max_length=50,
-        choices=PLATES,
-        default=[0][0]
-    )
-    
-    def __str__(self):
-        return self.name
-    
-    def get_absolute_url(self):
-        return reverse('keyboards_detail', kwargs={'keyboard_id': self.id})
-    
 TYPES= (
     ('Linear', 'Linear'),
     ('Tactile', 'Tactile'),
@@ -140,3 +90,62 @@ class Switch(models.Model):
         choices = PINS,
         default=[0][0]
     )
+    
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse("switches_detail", kwargs={"pk": self.id})
+
+
+LAYOUTS = (
+    ('60%', '60%'),
+    ('65%', '65%'),
+    ('75%', '75%'),
+    ('80%', '80%'),
+    ('95%', '95%'),
+    ('100%', '100%')
+)
+
+PCB_BOARDS = (
+    ('Hotswap','Hotswap'),
+    ('Solderable','Solderable')
+)
+
+PLATES = (
+    ('Aluminum','Aluminum'),
+    ('Brass','Brass'),
+    ('Carbon Fiber', 'Carbon Fiber'),
+    ('FR-4','FR-4'),
+    ('Polycarbonate','Polycarbonate'),
+    ('POM', 'POM'),
+    ('Steel','Steel')
+)
+
+# Create your models here.
+class Keyboard(models.Model):
+    name = models.CharField(max_length=100)
+    layout = models.CharField(
+        max_length=50,
+        choices=LAYOUTS,
+        default=[0][0]
+    )
+    pcb = models.CharField(
+        max_length=50,
+        choices=PCB_BOARDS,
+        default=[0][0]
+    )
+    plate = models.CharField(
+        max_length=50,
+        choices=PLATES,
+        default=[0][0]
+    )
+    switches = models.ManyToManyField(Switch)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse('keyboards_detail', kwargs={'keyboard_id': self.id})
+    

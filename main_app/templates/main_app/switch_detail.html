@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/switches/swtich-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>All Switches</h1>
+</section>
+
+<section class="card-container">
+  {% for switch in switch_list %}
+    <a href="{% url 'toys_detail' switch.id %}">
+      <div class="card-content">
+        <h2>{{ switch.name }}</h2>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
