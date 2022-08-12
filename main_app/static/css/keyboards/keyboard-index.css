@@ -1,21 +1,25 @@
-.keybroad-container {
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.page-header > h1 {
+  color: #5b5b71;
+}
+
+.card-container {
   padding: 0 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.page-header > h1 {
-  display: flex;
-  justify-content: center;
-  color: #5b5b71;
-  
-}
-
-.keyboard-card {
+.card {
   width: 275px;
   margin: 10px;
-  border: var(--borders);
+  border: 2px solid #c19996;
   box-shadow: var(--card-box-shadow);
 }
 
@@ -24,3 +28,17 @@
   width: 100%;
 }
 
+.card > a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.card h2 {
+  margin: 10px 0;
+  font-size: var(--font-xl);
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: var(--font-reg);
+}

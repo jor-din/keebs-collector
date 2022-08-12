@@ -79,8 +79,8 @@ class Switch(models.Model):
         choices = SPRINGS,
         default=[0][0]
     )
-    actuation_force = models.IntegerField  
-    bottom_out = models.IntegerField
+    actuation_force = models.IntegerField()
+    bottom_out = models.IntegerField()
     bottom_housing = models.CharField(
         max_length=50,
         choices=BOTTOM_HOUSINGS,

@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/keyboards/keyboard-detail.css' %}" />
 {% endblock %} 
-{% block content%} 
+{% block content %} 
 
 <div class="keyboard-details">
   <p>{{ keyboard.name }}</p>
@@ -17,3 +17,21 @@
 {% comment %} New markup above {% endcomment %}
 </div>
 </section>
+
+<section class="switches">
+  <div class="subsection-title">
+    <h2>Switch</h2>
+  </div>
+  <h3>{{ keyboard.name }} Current Switch</h3>
+  <div class="subsection-content">
+    <form method="POST">
+      <select name="switches">
+        {% for switch in switch_list %}
+        <option>{{ switch.name }}</option>
+        {% endfor %}
+      </select>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

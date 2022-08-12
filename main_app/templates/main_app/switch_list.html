@@ -5,7 +5,7 @@
 <link
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/toys/toy-index.css' %}"
+  href="{% static 'css/switches/switch-index.css' %}"
 />
 {% endblock %}
 
@@ -13,16 +13,17 @@
 
 <section class="page-header">
   <h1>All Switches</h1>
+  <button><a href="{% url 'switches_create' %}">Add Switch</a></button>
 </section>
 
 <section class="card-container">
   {% for switch in switch_list %}
-  <div class="card" style="border-color: {{ toy.color }}">
-    <div class="card-bg" style="background-color: {{ toy.color }}"></div>
-    <a href="{% url 'toys_detail' toy.id %}">
+  <div class="card"">
+    <div class="card-bg""></div>
+    <a href="{% url 'switches_detail' switch.id %}">
       <div class="card-content">
-        <h2>{{ toy.name }}</h2>
-        <p>A {{ toy.color }} toy</p>
+        <h2>{{ switch.name }}</h2>
+      
       </div>
     </a>
   </div>

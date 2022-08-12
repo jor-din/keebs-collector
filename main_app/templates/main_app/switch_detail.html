@@ -1,29 +1,20 @@
-{% extends 'base.html' %} 
-{% load static %} 
-
-{% block head %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'css/switches/swtich-index.css' %}"
-/>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/keyboards/keyboard-detail.css' %}" />
+{% endblock %} 
+{% block content %} 
 
 <section class="page-header">
-  <h1>All Switches</h1>
+  <h1> {{ switch.name }}</h1>
 </section>
 
 <section class="card-container">
-  {% for switch in switch_list %}
-    <a href="{% url 'toys_detail' switch.id %}">
-      <div class="card-content">
-        <h2>{{ switch.name }}</h2>
-      </div>
-    </a>
+  <div class="card">
+    <div class="card-content">
+      <p>{{ switch.type }} Switch</p>
+    </div>
   </div>
-  {% endfor %}
+  <a href="{% url 'switches_update' switch.id %}" class="btn warn">Edit</a>
+  <a href="{% url 'switches_delete' switch.id %}" class="btn danger">Delete</a>
 </section>
 
 {% endblock %}

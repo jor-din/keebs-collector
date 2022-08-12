@@ -38,7 +38,7 @@ class KeyboardCreate(LoginRequiredMixin, CreateView):
 
 class KeyboardUpdate(LoginRequiredMixin, UpdateView):
     model = Keyboard
-    fields = ['pcb', 'plate']
+    fields = ['pcb', 'plate', 'switches']
     
 class KeyboardDelete(LoginRequiredMixin, DeleteView):
     model = Keyboard
