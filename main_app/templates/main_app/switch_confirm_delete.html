@@ -5,19 +5,23 @@
 
 <div class="page-header">
   <h1>Delete Switch?</h1>
-  <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer"/>
+
+  <h2>Are you sure you want to delete {{ object.name }}?</h2>
 </div>
-<h2>Are you sure you want to delete {{ object.name }}?</h2>
 
 <form action="" method="POST" class="form">
   {% csrf_token %}
-  <a 
-    href="{% url 'switches_detail' switch.id %}" 
-    class="btn secondary"
-  >
-    Cancel
-  </a>
-  <button type="submit" class="btn danger">Yes - Delete!</button>
-</form>
+  <div class='delete-form-btn'>
+    <button class='cancel-btn'>
+      <a 
+      href="{% url 'switches_detail' switch.id %}" 
+      class="btn secondary"
+    >
+      Cancel
+    </a>
+    </button>
+    <button type="submit" class="delete-btn">Delete</button>
+  </form>
+  </div>
 
 {% endblock %}

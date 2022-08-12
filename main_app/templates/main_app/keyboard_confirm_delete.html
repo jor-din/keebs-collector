@@ -5,18 +5,22 @@
 
 <div class="page-header">
   <h1>Delete Keyboard?</h1>
+  <h2>Are you sure you want to delete {{ keyboard.name }}?</h2>
 </div>
-<h2>Are you sure you want to delete {{ keyboard.name }}?</h2>
 
 <form action="" method="POST" class="form">
   {% csrf_token %}
-  <a 
-    href="{% url 'keyboards_detail' keyboard.id %}" 
-    class="btn secondary"
-  >
-    Cancel
-  </a>
-  <button type="submit" class="btn danger">Delete</button>
-</form>
+  <div class='delete-form-btn'>
+    <button class='cancel-btn'>
+      <a 
+      href="{% url 'keyboards_detail' keyboard.id %}" 
+      class="btn secondary"
+    >
+      Cancel
+    </a>
+    </button>
+    <button type="submit" class="delete-btn">Delete</button>
+  </form>
+  </div>
 
 {% endblock %}
