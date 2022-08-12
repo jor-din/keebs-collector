@@ -30,7 +30,7 @@ def keyboards_detail(request, keyboard_id):
 
 class KeyboardCreate(LoginRequiredMixin, CreateView):
     model = Keyboard
-    fields = '__all__'
+    fields = ['name', 'layout', 'pcb', 'plate']
    
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -48,13 +48,13 @@ class SwitchCreate(LoginRequiredMixin, CreateView):
   model =  Switch
   fields = '__all__'
 
-class  SwitchList(LoginRequiredMixin, ListView):
+class SwitchList(LoginRequiredMixin, ListView):
   model =  Switch
 
-class  SwitchDetail(LoginRequiredMixin, DetailView):
+class SwitchDetail(LoginRequiredMixin, DetailView):
   model =  Switch
 
-class  SwitchUpdate(LoginRequiredMixin, UpdateView):
+class SwitchUpdate(LoginRequiredMixin, UpdateView):
   model =  Switch
   fields = ['spring', 'actuation_force', 'bottom_out']
 

@@ -1,0 +1,72 @@
+.page-header {
+  display: flex;
+  justify-content: center;
+}
+.page-header > h1 {
+  color: #c19996;
+  font-size: 3rem;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+table {
+  padding: 0 40px;
+  width: 60%;
+  border-spacing: 0 20px;
+}
+
+th {
+  text-align: left;
+  padding: 6px 10px 0 0;
+  font-weight: normal;
+  vertical-align: top;
+  padding: .5rem;
+  font-size: 1.2rem;
+}
+
+td {
+  max-width: 60%;
+}
+
+td > * {
+  width: 100%;
+  padding: 2px 4px;
+  font-size: var(--font-l);
+}
+
+td > textarea {
+  height: calc(4 * var(--font-l) + 8px);
+  font-family: inherit;
+}
+
+.btn {
+    align-self: center;
+    margin-right: 0;
+    margin-top: 16px;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #fee8de;
+    border: none;
+    color: #5b5b71;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+tr > td > input {
+    padding: .5rem;
+    margin: .5rem;
+    width: 500px;
+    border-radius: 15px;
+    border: none;
+    outline: 1px solid #fee8de;
+}
+
+input:focus-within {
+    outline: 1px solid #5b5b71;
+}

@@ -6,39 +6,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link 
-    rel="shortcut icon" 
-    type="image/png"
-    href="{% static 'images/splash.svg' %}"
-  >
-  <title>Cat Collector</title>
+  <title>Keep Keebs</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Rozha+One&display=swap" rel="stylesheet">
+  <link href='https://css.gg/log-out.css' rel='stylesheet'>
   {% block head %}
   {% endblock %}
+
 </head>
 <body>
   <header>
-    <div class="header-logo-container">
-      <a href="/">
-        <img 
-          src="{% static 'images/header-logo.svg' %}"
-          alt="The Cat Collector Logo"
-        >
-      </a>
-    </div>
     <nav>
+      <div class="header-title">
+        <h1>KEEP KEEBS</h1>
+      </div>
       <ul>
         {% if user.is_authenticated %}
-          <li><a href="{% url 'keyboards_index' %}">All Keyboards</a></li>
           <li><a href="{% url 'switches_index' %}">All Switches</a></li>
-          <li><a href="{% url 'keyboards_create' %}">Add a Keyboard</a></li>
-          <li><a href="{% url 'switches_create' %}">Add a Switch</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'logout' %}">Log out</a></li>
+          <li><a href="{% url 'keyboards_create' %}">Add Keyboard</a></li>
+          <li><a href="{% url 'switches_create' %}">Add Switch</a></li>
+          <li><a href="{% url 'logout' %}"><i class="gg-log-out"></i></a></li>
         {% else %}
-          <li><a href="{% url 'about'%}">About</a></li>
           <li><a href="{% url 'home'%}">Login</a></li>
-          <li><a href="{% url 'signup'%}">Sign up</a></li>
+          <li><a href="{% url 'signup'%}">Sign Up</a></li>
         {% endif %}
       </ul>
     </nav>

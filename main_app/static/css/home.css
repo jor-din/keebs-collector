@@ -1,0 +1,97 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+main > section {
+  height: 70vh;
+  width: 100%;
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form.login {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    height: 600px;
+    padding: 10px;
+}
+
+form.login > h1 {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    color: #5b5b71;
+    font-size: 3rem;
+}
+
+form.login > p {
+    display: flex;
+    justify-content: center;
+    color: #5b5b71;
+    font-size: 1rem;
+    
+}
+form.login > p > label {
+    padding: .5rem;
+    font-size: 1.2rem;
+}
+
+form.login > p > input {
+    padding: .5rem;
+    width: 200px;
+    border-radius: 15px;
+    border: none;
+}
+
+input:focus-within {
+    outline: 2px solid #fee8de;
+}
+
+form.login .btn {
+    align-self: center;
+    margin-right: 0;
+    margin-top: 16px;
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #fee8de;
+    border: none;
+    color: #5b5b71;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#signup-btn{
+    align-self: center;
+    margin-right: 0;
+    margin-top: 16px;
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #5b5b71;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn > a {
+    text-decoration: none;
+    color: #fee8de;
+}
+
+form.login > h3 {
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 2rem
+}

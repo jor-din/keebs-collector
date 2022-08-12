@@ -1,7 +1,14 @@
-<p>{{ keyboard.name }}</p>
-<p><small>{{ keyboard.layout }}</small></p>
-<p><small>{{ keyboard.pcb }}</small></p>
-<p><small>{{ keyboard.plate }}</small></p>
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/keyboards/keyboard-detail.css' %}" />
+{% endblock %} 
+{% block content%} 
+
+<div class="keyboard-details">
+  <p>{{ keyboard.name }}</p>
+  <p><small>{{ keyboard.layout }}</small></p>
+  <p><small>{{ keyboard.pcb }}</small></p>
+  <p><small>{{ keyboard.plate }}</small></p>
+</div>
 
 <div class="keyboard-actions">
   <a href="{% url 'keyboards_update' keyboard.id %}" class="btn warn">Edit</a>
