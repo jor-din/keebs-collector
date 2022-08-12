@@ -2,7 +2,8 @@
 
 ### A web app designed for mechanical keyboard hobbist to record keyboard and switch collections 
 
-### - [Trello](https://trello.com/b/w3irVbCe/keebs-collector)
+### [Trello](https://trello.com/b/w3irVbCe/keebs-collector)
+### [Heroku](https://keepkeebs.herokuapp.com/)
 
 ## 👩🏻‍💻Technology Used 
 - CSS
