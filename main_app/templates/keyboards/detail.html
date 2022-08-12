@@ -3,35 +3,24 @@
 {% endblock %} 
 {% block content %} 
 
-<div class="keyboard-details">
-  <p>{{ keyboard.name }}</p>
-  <p><small>{{ keyboard.layout }}</small></p>
-  <p><small>{{ keyboard.pcb }}</small></p>
-  <p><small>{{ keyboard.plate }}</small></p>
-</div>
-
-<div class="keyboard-actions">
-  <a href="{% url 'keyboards_update' keyboard.id %}" class="btn warn">Edit</a>
-  <a href="{% url 'keyboards_delete' keyboard.id %}" class="btn danger">Delete</a>
-</div>
-{% comment %} New markup above {% endcomment %}
-</div>
+<section class="page-header">
+  <h1> {{ keyboard.name }}</h1>
 </section>
 
-<section class="switches">
-  <div class="subsection-title">
-    <h2>Switch</h2>
+<section class="card-container">
+  <div class="card">
+    <div class="card-content">
+      <p>Layout: {{ keyboard.layout }}</p>
+        <p>PCB: {{ keyboard.pcb}}</p>
+        <p>Plate: {{ keyboard.plate }}</p>
+    </div>
+    <div class='edt-del-btn'>
+      <button class='edit-btn'><a href="{% url 'keyboards_update' keyboard.id %}" class="btn warn">Edit</a></button>
+   <button class='delete-btn'>
+    <a href="{% url 'keyboards_delete' keyboard.id %}" class="btn danger">Delete</a>
+   </button>
+    </div>
   </div>
-  <h3>{{ keyboard.name }} Current Switch</h3>
-  <div class="subsection-content">
-    <form method="POST">
-      <select name="switches">
-        {% for switch in switch_list %}
-        <option>{{ switch.name }}</option>
-        {% endfor %}
-      </select>
-    </form>
-  </div>
-</div>
+</section>
 
 {% endblock %}

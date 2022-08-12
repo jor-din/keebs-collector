@@ -3,10 +3,26 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  }
+  align-items: center;
+}
   
   .page-header > h1 {
-    color: #5b5b71;
+    color: #c19996;
+    font-size: 2rem;
+  }
+  .page-header > button {
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #5b5b71;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  button > a {
+    text-decoration: none;
+    color: #fee8de;
   }
   
   .card-container {

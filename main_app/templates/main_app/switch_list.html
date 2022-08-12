@@ -12,7 +12,7 @@
 {% block content %}
 
 <section class="page-header">
-  <h1>All Switches</h1>
+  <h1>Switches</h1>
   <button><a href="{% url 'switches_create' %}">Add Switch</a></button>
 </section>
 
@@ -23,7 +23,7 @@
     <a href="{% url 'switches_detail' switch.id %}">
       <div class="card-content">
         <h2>{{ switch.name }}</h2>
-      
+        
       </div>
     </a>
   </div>
